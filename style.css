@@ -1,35 +1,44 @@
 /* Global Styles */
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  background: linear-gradient(135deg, #2c3e50, #4bcffa);
-  padding: 20px;
+html, body {
+  height: 100%;
   margin: 0;
-  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  color: #2c3e50; /* Dark blue for text */
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Container Styles */
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  background: #1e272e;
+  background: #ffffff; /* White background for the container */
   padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-  border: 2px solid #00d2d3;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Header Styles */
-h1,
-h2 {
+h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #f7f1e3;
+  color: #34495e; /* Darker blue for the title */
+  font-size: 2.5rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 700;
-  background: -webkit-linear-gradient(45deg, #ffdd59, #ff4757);
-  -webkit-background-clip: text;
-  color: transparent;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-align: center;
+  color: #7f8c8d; /* Gray for subheadings */
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 /* Form Styles */
@@ -40,49 +49,53 @@ form {
 
 fieldset {
   margin-bottom: 25px;
-  padding: 25px;
-  border: 2px solid #00d2d3;
-  border-radius: 12px;
-  background-color: #485460;
+  padding: 20px;
+  border: 2px solid #bdc3c7; /* Light gray border for fieldset */
+  border-radius: 8px;
+  background-color: #ecf0f1; /* Light background for fieldset */
 }
 
 legend {
   font-weight: bold;
-  font-size: 1.3rem;
-  color: #ffdd59;
+  font-size: 1.5rem;
+  color: #34495e; /* Darker blue for legend */
 }
 
 label {
   display: block;
   margin-top: 15px;
   font-weight: bold;
-  color: #ffdd59;
+  color: #2c3e50; /* Darker color for labels */
 }
 
-input {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
   margin-top: 10px;
   padding: 12px;
-  border: 2px solid #00d2d3;
-  border-radius: 8px;
+  border: 2px solid #bdc3c7; /* Light gray border for inputs */
+  border-radius: 5px;
   width: calc(100% - 24px);
   box-sizing: border-box;
-  background-color: #2f3542;
-  color: #ffffff;
+  background-color: #ffffff; /* White background for inputs */
+  color: #2c3e50; /* Dark text for inputs */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus {
-  border-color: #ffdd59;
-  box-shadow: 0 0 8px #ffdd59;
+input:focus,
+textarea:focus {
+  border-color: #2980b9; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(41, 128, 185, 0.5); /* Blue shadow on focus */
   outline: none;
 }
 
 button {
   padding: 15px;
-  background-color: #ff4757;
-  color: #ffffff;
+  background-color: #2980b9; /* Blue background for buttons */
+  color: #ffffff; /* White text for buttons */
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   margin-top: 15px;
   font-weight: bold;
@@ -91,38 +104,43 @@ button {
 }
 
 button:hover {
-  background-color: #ff6b81;
-  transform: scale(1.05);
+  background-color: #3498db; /* Lighter blue on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 /* Resume Styles */
-#resume {
-  margin-top: 30px;
+#resumeOutput {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  border: 3px solid #bdc3c7; /* Light gray border for resume output */
+  border-radius: 10px;
+  background-color: #ffffff; /* White background for resume output */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #2c3e50; /* Dark text for resume output */
 }
 
-#resume-content {
-  background-color: #57606f;
-  padding: 30px;
-  border-radius: 15px;
-  border: 2px solid #ffdd59;
-  color: #ffffff;
-  box-shadow: 0 0 15px rgba(255, 221, 89, 0.6);
+#resumeOutput h2 {
+  text-align: center;
+  color: #2980b9; /* Blue for headings */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-#resume-content h3 {
-  margin-top: 0;
-  color: #ffdd59;
+#resumeOutput h3 {
+  color: #34495e; /* Darker blue for subheadings */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #bdc3c7; /* Light gray border for subheadings */
+  padding-bottom: 10px;
 }
 
-#resume-content p,
-#resume-content ul {
-  margin: 10px 0;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 25px;
-  color: #ffffff;
+#resumeOutput p {
+  font-size: 1.1rem;
+  margin: 15px 0;
+  line-height: 1.5;
+  color: #2c3e50; /* Dark text for paragraph */
 }
 
 /* Share Section Styles */
@@ -134,14 +152,14 @@ ul {
 #shareable-link {
   display: block;
   margin: 15px 0;
-  color: #00d2d3;
+  color: #2980b9; /* Blue for shareable link */
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 #shareable-link:hover {
-  color: #ffdd59;
+  color: #3498db; /* Lighter blue on hover */
   text-decoration: underline;
 }
 
@@ -150,9 +168,9 @@ ul {
   display: inline-block;
   margin: 10px;
   padding: 12px 25px;
-  background-color: #1e90ff;
-  color: #ffffff;
-  border-radius: 10px;
+  background-color: #2980b9; /* Blue background for buttons */
+  color: #ffffff; /* White text for buttons */
+  border-radius: 5px;
   font-weight: bold;
   font-size: 1.1rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -161,59 +179,59 @@ ul {
 
 #copy-link-btn:hover,
 #download-btn:hover {
-  background-color: #00a8ff;
-  box-shadow: 0 0 10px #00d2d3;
-  border-color: #00d2d3;
+  background-color: #3498db; /* Lighter blue on hover */
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.5); /* Blue shadow on hover */
+  border-color: #2980b9; /* Blue border on hover */
 }
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
   .container {
-    padding: 30px;
-    max-width: 100%;
+      padding: 30px;
+      max-width: 100%;
   }
 
-  h1,
+  h1 {
+      font-size: 2rem;
+  }
+
   h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+      font-size: 1.8rem;
   }
 
-  form,
-  fieldset {
-    padding: 20px;
+  form, fieldset {
+      padding: 20px;
   }
 
   legend {
-    font-size: 1.2rem;
+      font-size: 1.2rem;
   }
 
-  input,
-  button {
-    font-size: 1rem;
-    padding: 10px;
+  input, button {
+      font-size: 1rem;
+      padding: 10px;
   }
 
   button {
-    margin-top: 10px;
+      margin-top: 10px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  h1,
-  h2 {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+  h1 {
+      font-size: 1.5rem;
   }
 
-  input,
-  button {
-    font-size: 0.9rem;
-    padding: 8px;
+  h2 {
+      font-size: 1.4rem;
+  }
+
+  input, button {
+      font-size: 0.9rem;
+      padding: 8px;
   }
 
   .container {
-    padding: 20px;
+      padding: 20px;
   }
 }
